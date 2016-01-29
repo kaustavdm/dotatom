@@ -1,0 +1,57 @@
+{
+  "name": "build-cargo",
+  "version": "0.12.0",
+  "description": "Runs Cargo targets",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtomBuild/atom-build-cargo.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": "^1.0.0"
+  },
+  "providedServices": {
+    "builder": {
+      "description": "Runs Cargo targets",
+      "versions": {
+        "2.0.0": "provideBuilder"
+      }
+    }
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.5",
+    "eslint": "^1.10.1",
+    "eslint-config-atom-build": "^1.0.0"
+  },
+  "keywords": [
+    "build",
+    "compile",
+    "cargo",
+    "rust",
+    "productivity"
+  ],
+  "main": "lib/cargo.js",
+  "readme": "# Cargo runner (Rust) for Atom\n[![Build Status](https://travis-ci.org/AtomBuild/atom-build-cargo.svg?branch=master)](https://travis-ci.org/AtomBuild/atom-build-cargo)\n[![Gitter chat](https://badges.gitter.im/noseglid/atom-build.svg)](https://gitter.im/noseglid/atom-build)\n\nUses the [atom-build](https://github.com/noseglid/atom-build) package to run Cargo tasks in the `Atom` editor.\n\nThis package requires [atom-build](https://github.com/noseglid/atom-build) to be installed.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/AtomBuild/atom-build-cargo/issues"
+  },
+  "homepage": "https://github.com/AtomBuild/atom-build-cargo#readme",
+  "_id": "build-cargo@0.12.0",
+  "_shasum": "6241731f440232d5eb66fe54d2625a09b9832c36",
+  "_resolved": "file:../d-116028-13286-15s0c4x/package.tgz",
+  "_from": "../d-116028-13286-15s0c4x/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".js": [
+        "lib/cargo.js"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

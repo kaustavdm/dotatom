@@ -1,0 +1,2 @@
+'atom-workspace':
+  'ctrl-alt-shift-g d': 'go-config:detect'

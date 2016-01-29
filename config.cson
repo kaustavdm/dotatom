@@ -1,0 +1,24 @@
+"*":
+  core:
+    audioBeep: false
+    projectHome: "~/src"
+    themes: [
+      "one-dark-ui"
+      "atom-monokai"
+    ]
+  editor:
+    backUpBeforeSaving: true
+    fontSize: 12
+    invisibles: {}
+    showIndentGuide: true
+    softWrap: true
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    userId: "414fce83-a041-dabe-1dba-de1a9359e358"
+  "git-projects":
+    rootPath: "~/src"
+  "linter-golinter": {}
+  racer: {}
+  welcome:
+    showOnStartup: false
