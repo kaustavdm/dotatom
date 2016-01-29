@@ -36,4 +36,22 @@ These are my set of configurations for the Atom text editor. It is geared for wo
     - Install Racer: `$ cargo install --git 'https://github.com/phildawes/racer.git'`
     - Make sure the `racer` executible is on `PATH`.
 
-6. **Run `atom`**. In the directory that you want atom to begin, run `$ atom .`.
+6. **Install atom package dependencies**:
+
+    For Linux/OSX:
+
+    ```bash
+    $ cd <path-to>/dotatom
+    $ sh ./install.sh
+    ```
+
+    For Windows:
+
+    ```bash
+    $ cd <path-to>/dotatom
+    $ install.bat
+    ```
+
+    If you encounter an error, go through the error log and install necessary dependencies.
+
+7. **Run `atom`**. In the directory that you want atom to begin, run `$ atom .`.
