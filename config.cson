@@ -2,10 +2,6 @@
   core:
     audioBeep: false
     projectHome: "~/src"
-    themes: [
-      "one-dark-ui"
-      "atom-monokai"
-    ]
   editor:
     backUpBeforeSaving: true
     fontSize: 12
