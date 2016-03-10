@@ -14,7 +14,10 @@
     userId: "414fce83-a041-dabe-1dba-de1a9359e358"
   "git-projects":
     rootPath: "~/src"
+  "go-plus": {}
   "linter-golinter": {}
+  "one-dark-ui":
+    layoutMode: "Compact"
   racer: {}
   welcome:
     showOnStartup: false
