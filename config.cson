@@ -4,8 +4,9 @@
     projectHome: "~/src"
   editor:
     backUpBeforeSaving: true
-    fontSize: 12
+    fontFamily: "Source Code Pro"
     invisibles: {}
+    preferredLineLength: 120
     showIndentGuide: true
     softWrap: true
     tabLength: 4

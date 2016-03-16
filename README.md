@@ -19,7 +19,7 @@ These are my set of configurations for the Atom text editor. It is geared for wo
 3. **Set-up dependencies available on npm**
 
     ```bash
-    $ sudo npm install -g jslint
+    $ sudo npm install -g aspell jslint tern
     ```
 
 4. **Set-up Go dependencies**
@@ -28,15 +28,22 @@ These are my set of configurations for the Atom text editor. It is geared for wo
     - Set `GOPATH` environment variable
     - Install Gocode: `$ go get -u github.com/nsf/gocode`.
     - Install Golint: `$ go get -u github.com/golang/lint`.
-    - Make sure `gocode` executible is on `PATH`.
+    - Install Gorename: `$ go get golang.org/x/tools/cmd/gorename`.
+    - Make sure `gocode`, `godef`, `golint` and `gorename` executibles are on `PATH`.
 
 5. **Set-up Rust dependencies**
 
     - [Install Rust](https://www.rust-lang.org/install.html)
-    - Install Racer: `$ cargo install --git 'https://github.com/phildawes/racer.git'`
-    - Make sure the `racer` executible is on `PATH`.
+    - Download Rust sources and set `RUST_SRC_PATH` environment variable to the `./src` directory in the Rust source.
+    - Install Racer: `$ cargo install racer`
+    - Install Rustfmt: `$ cargo install rustfmt`
+    - Make sure the `racer` and `rustfmt` executibles are on `PATH`.
 
-6. **Install atom package dependencies**:
+6. **Install Adobe Source Code Pro font**
+
+    - Download and install the font from [Source Code Pro releases](https://github.com/adobe-fonts/source-code-pro/releases/latest).
+
+7. **Install atom package dependencies**:
 
     For Linux/OSX:
 
@@ -54,4 +61,4 @@ These are my set of configurations for the Atom text editor. It is geared for wo
 
     If you encounter an error, go through the error log and install necessary dependencies.
 
-7. **Run `atom`**. In the directory that you want atom to begin, run `$ atom .`.
+8. **Run `atom`**. In the directory that you want atom to begin, run `$ atom .`.
