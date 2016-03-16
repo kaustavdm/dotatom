@@ -1,14 +1,14 @@
 'use babel'
+/* eslint-env jasmine */
 
 import {Executor} from '../lib/executor'
-import {PathHelper} from './../lib/pathhelper'
+import pathhelper from './../lib/pathhelper'
 import os from 'os'
 import path from 'path'
 
 describe('executor', () => {
   let executor = null
   let prefix = null
-  let pathhelper = null
   let result = null
   let error = null
 
@@ -20,7 +20,6 @@ describe('executor', () => {
       if (os.platform() === 'win32') {
         prefix = 'C:\\'
       }
-      pathhelper = new PathHelper()
       executor = new Executor()
     })
   })
@@ -156,8 +155,8 @@ describe('executor', () => {
       }
 
       let result = executor.execSync(command)
-      expect(result.code).toBeDefined()
-      expect(result.code).toBe(0)
+      expect(result.exitcode).toBeDefined()
+      expect(result.exitcode).toBe(0)
       expect(result.stdout).toBeDefined()
       expect(result.stdout).not.toBe('')
       expect(result.stderr).toBeDefined()
@@ -167,8 +166,8 @@ describe('executor', () => {
 
     it('returns a message if the command was not found', () => {
       let result = executor.execSync('nonexistentcommand')
-      expect(result.code).toBeDefined()
-      expect(result.code).toBe(127)
+      expect(result.exitcode).toBeDefined()
+      expect(result.exitcode).toBe(127)
       expect(result.stdout).toBeDefined()
       expect(result.stdout).toBe('')
       expect(result.stderr).toBeDefined()

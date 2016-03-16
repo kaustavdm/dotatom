@@ -1,4 +1,5 @@
 'use babel'
+/* eslint-env jasmine */
 
 describe('go-config', () => {
   let goconfigMain = null
@@ -8,7 +9,7 @@ describe('go-config', () => {
       return atom.packages.activatePackage('environment')
     })
     waitsForPromise(() => {
-      return atom.packages.activatePackage('go-config').then(pack => {
+      return atom.packages.activatePackage('go-config').then((pack) => {
         goconfigMain = pack.mainModule
       })
     })
@@ -65,6 +66,13 @@ describe('go-config', () => {
       expect(provider).toBeTruthy()
       expect(provider.executor).toBeTruthy()
       expect(provider.locator).toBeTruthy()
+      expect(provider.locator.runtimes).toBeDefined()
+      expect(provider.locator.runtime).toBeDefined()
+      expect(provider.locator.gopath).toBeDefined()
+      expect(provider.locator.findTool).toBeDefined()
+      expect(provider.locator.runtimeCandidates).not.toBeDefined()
+      expect(provider.environment).toBeDefined()
+      expect(provider.environment()).toBeTruthy()
     })
   })
 

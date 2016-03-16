@@ -3,6 +3,7 @@
 import {CompositeDisposable} from 'atom'
 import {isTruthy, isFalsy} from './check'
 import {Executor} from './executor'
+import semver from 'semver'
 
 export default {
   environment: null,
@@ -13,7 +14,7 @@ export default {
   activate () {
     this.dependenciesInstalled = false
     this.subscriptions = new CompositeDisposable()
-    this.subscriptions.add(atom.commands.add('atom-workspace', 'go-config:detect', () => { }))
+    this.subscriptions.add(atom.commands.add('atom-workspace', 'go-config:refresh', () => { }))
     require('atom-package-deps').install('go-config').then(() => {
       this.dependenciesInstalled = true
     }).catch((e) => {
@@ -66,6 +67,10 @@ export default {
   },
 
   getEnvironment () {
+    if (semver.satisfies(this.version(), '>=1.7.0')) {
+      return process.env
+    }
+
     if (this.ready()) {
       return this.environment
     }
@@ -73,8 +78,44 @@ export default {
     return process.env
   },
 
+  version () {
+    return semver.major(atom.appVersion) + '.' + semver.minor(atom.appVersion) + '.' + semver.patch(atom.appVersion)
+  },
+
   provide () {
-    return {executor: this.getExecutor(), locator: this.getLocator(), environment: this.getEnvironment.bind(this)}
+    return this.get100Implementation()
+  },
+
+  provide010 () {
+    return this.get010Implementation()
+  },
+
+  get100Implementation () {
+    let executor = this.getExecutor()
+    let locator = this.getLocator()
+    return {
+      executor: {
+        exec: executor.exec.bind(executor),
+        execSync: executor.execSync.bind(executor)
+      },
+      locator: {
+        runtimes: locator.runtimes.bind(locator),
+        runtime: locator.runtime.bind(locator),
+        gopath: locator.gopath.bind(locator),
+        findTool: locator.findTool.bind(locator)
+      },
+      environment: locator.environment.bind(locator)
+    }
+  },
+
+  get010Implementation () {
+    let executor = this.getExecutor()
+    let locator = this.getLocator()
+    return {
+      executor: executor,
+      locator: locator,
+      environment: this.getEnvironment.bind(this)
+    }
   },
 
   consumeEnvironment (environment) {

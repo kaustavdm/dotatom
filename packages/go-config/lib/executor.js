@@ -27,7 +27,7 @@ class Executor {
     return this.environmentFn()
   }
 
-  execSync (command, args = [], options) {
+  execSync (command, args = [], options = {}) {
     options = isFalsy(options) ? {} : options
     options.encoding = 'utf8'
     if (isFalsy(options.env)) {
@@ -64,7 +64,7 @@ class Executor {
       }
     }
 
-    return {code: code, stdout: stdout, stderr: stderr, error: error}
+    return {exitcode: code, stdout: stdout, stderr: stderr, error: error}
   }
 
   exec (command, args = [], options = {}) {
