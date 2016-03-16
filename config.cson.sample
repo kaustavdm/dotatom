@@ -19,6 +19,8 @@
   "linter-golinter": {}
   "one-dark-ui":
     layoutMode: "Compact"
-  racer: {}
+  racer:
+    racerBinPath: "~/.cargo/bin/racer"
+    rustSrcPath: "~/src/rust/rustc-1.7.0/src/"
   welcome:
     showOnStartup: false

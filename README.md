@@ -16,13 +16,19 @@ These are my set of configurations for the Atom text editor. It is geared for wo
     $ ln -s <path-to>/dotatom ~/.atom
     ```
 
-3. **Set-up dependencies available on npm**
+3. **Copy config.cson.sample to config.cson and edit values**
+
+    ```bash
+    $ cp <path-to>/dotatom/config.cson.sample <path-to>/dotatom/config.cson
+    ```
+
+4. **Set-up dependencies available on npm**
 
     ```bash
     $ sudo npm install -g aspell jslint tern
     ```
 
-4. **Set-up Go dependencies**
+5. **Set-up Go dependencies**
 
     - Install Golang
     - Set `GOPATH` environment variable
@@ -31,7 +37,7 @@ These are my set of configurations for the Atom text editor. It is geared for wo
     - Install Gorename: `$ go get golang.org/x/tools/cmd/gorename`.
     - Make sure `gocode`, `godef`, `golint` and `gorename` executibles are on `PATH`.
 
-5. **Set-up Rust dependencies**
+6. **Set-up Rust dependencies**
 
     - [Install Rust](https://www.rust-lang.org/install.html)
     - Download Rust sources and set `RUST_SRC_PATH` environment variable to the `./src` directory in the Rust source.
@@ -39,11 +45,11 @@ These are my set of configurations for the Atom text editor. It is geared for wo
     - Install Rustfmt: `$ cargo install rustfmt`
     - Make sure the `racer` and `rustfmt` executibles are on `PATH`.
 
-6. **Install Adobe Source Code Pro font**
+7. **Install Adobe Source Code Pro font**
 
     - Download and install the font from [Source Code Pro releases](https://github.com/adobe-fonts/source-code-pro/releases/latest).
 
-7. **Install atom package dependencies**:
+8. **Install atom package dependencies**:
 
     For Linux/OSX:
 
@@ -61,4 +67,4 @@ These are my set of configurations for the Atom text editor. It is geared for wo
 
     If you encounter an error, go through the error log and install necessary dependencies.
 
-8. **Run `atom`**. In the directory that you want atom to begin, run `$ atom .`.
+9. **Run `atom`**. In the directory that you want atom to begin, run `$ atom .`.
