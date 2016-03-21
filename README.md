@@ -4,6 +4,10 @@ These are my set of configurations for the Atom text editor. It is geared for wo
 
 ## Install
 
+0. Atom version
+
+Needs `atom v1.6+`.
+
 1. **Clone the repository**
 
     ```bash
